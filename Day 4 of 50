@@ -1,0 +1,11 @@
+if(N == 1)
+        return false;
+    long long int sum = 1;
+    for(int i=2; i<=sqrt(N); i++) {
+        if(N%i == 0) {
+            sum += i;
+            if(i != sqrt(N))
+                sum += N/i;
+        }
+    }
+    return sum == N;
