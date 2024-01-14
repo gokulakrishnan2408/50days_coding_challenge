@@ -1,0 +1,30 @@
+vector<int>v;
+            int n = txt.length(), m = pat.length();
+            int i{0};
+            for(int i=0;i < n;i++)
+            {
+                if (pat[0] == txt[i])
+                {
+                    int temp = 0;
+                    for (int k = 0, l = i; k < m; k++, l++)
+                    {
+                        if (pat[k] == txt[l])
+                        {
+                            temp++;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                    if (temp == m)
+                    {
+                        v.push_back(i+1);
+                    }
+                }
+               
+            }
+            if(v.size()==0){
+                v.push_back(-1);
+            }
+            return v;
