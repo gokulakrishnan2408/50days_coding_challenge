@@ -1,0 +1,39 @@
+/************************************************************
+
+    Use get function that returns the value at index i
+    in the infinite sorted binary array.
+
+    get(i)
+    {
+
+    }
+    
+
+************************************************************/
+
+long long firstOne()
+{
+    // Write your code here.
+    long long s=0;
+    long long e=1;
+    while(get(e)==0)
+    {
+        s=e;
+        e=e*2;
+    }
+    long long ans=e;
+    while(s<=e)
+    {
+        long long mid=s+(e-s)/2;
+        if(get(mid)==1)
+        {
+            ans=mid;
+            e=mid-1;
+        }
+        else
+        {
+            s=mid+1;
+        }
+    }
+    return ans;
+}
